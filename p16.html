@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Problem 16</title>
+    <style>
+        /* Container for images */
+        .gallery {
+            position: relative;
+            width: 500px;
+            height: 300px;
+        }
+
+        /* Common image style */
+        .gallery img {
+            position: absolute;
+            width: 200px;
+            height: 150px;
+            cursor: pointer;
+            border: 2px solid black;
+        }
+
+        /* Different starting positions */
+       #img1 { left: 20px; top: 20px; z-index: 1; }
+       #img2 { left: 40px; top: 35px; z-index: 2; }
+       #img3 { left: 60px; top: 50px; z-index: 3; }
+
+    </style>
+
+    <script>
+        // Global variable to track highest z-index
+        var topIndex = 3;
+
+        // Function to bring clicked image to front
+        function bringToFront(img) {
+            img.style.zIndex = ++topIndex;
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Overlapping Image Gallery</h2>
+
+    <div class="gallery">
+        <img id="img1" src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg?cs=srgb&dl=daylight-environment-forest-459225.jpg&fm=jpg" onclick="bringToFront(this)">
+        <img id="img2" src="https://images.pexels.com/photos/236047/pexels-photo-236047.jpeg?cs=srgb&dl=clouds-cloudy-countryside-236047.jpg&fm=jpg" onclick="bringToFront(this)">
+        <img id="img3" src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Download-Free-Pictures-3840x2160.jpg" onclick="bringToFront(this)">
+    </div>
+    <h1>D.Abhishek</h1>
+    <h1>24BKT0064</h1>
+</body>
+</html>
